@@ -1,0 +1,17 @@
+.form-control {
+    border-radius: 5px;
+    border: 1px solid rgba(63, 63, 63, 0.247);
+    padding: 10px 10px 6px 10px;
+    width: 100%;
+    //color: $gray;
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-group {
+    .form-control, select {
+        margin-top: 5px;
+    }
+}

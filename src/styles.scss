@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~flexboxgrid/dist/flexboxgrid.css";
+@import "assets/scss/colors.scss";
+@import "assets/scss/forms.scss";
+@import "assets/scss/sizes.scss";
+
+*{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    outline: unset;
+}
+
+.row{
+    margin: 0;
+}
