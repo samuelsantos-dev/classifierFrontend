@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserService } from './services/user.service';
 
 
 
@@ -9,7 +10,10 @@ import { UserFormComponent } from './components/user-form/user-form.component';
     UserFormComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
+  ],
+  providers:[
+    UserService
   ]
 })
 export class UsersModule { }

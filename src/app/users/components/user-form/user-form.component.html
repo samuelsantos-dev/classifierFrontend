@@ -1,37 +1,55 @@
 <div class="row">
-    <div class="col-md-6 bg-dark">a</div>
-    <div class="col-md-6">
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input class="form-control" type="text">
+    <div class="col-md-5 bg-dark"></div>
+    <div class="col-md-7">
+        <div class="content pt-6">
+            <h1 class="title mb-4">Cadastre-se</h1>
+            <form (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input class="form-control" type="text" id="name" name="name" [(ngModel)]="user.name">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <div class="form-group">
-                    <label for="name">CPF</label>
-                    <input class="form-control" type="text">
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input class="form-control" type="text" id="cpf" name="cpf" [(ngModel)]="user.cpf">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <div class="form-group">
-                    <label for="name">Email</label>
-                    <input class="form-control" type="text">
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text" name="email" [(ngModel)]="user.email">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <div class="form-group">
-                    <label for="name">Senha</label>
-                    <input class="form-control" type="text">
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input class="form-control" type="password" name="password" [(ngModel)]="user.password">
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar senha</label>
+                            <input class="form-control" type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 flex-center">
+                        <button class="btn btn-primary mt-4" [class.loading]="loader">Avançar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

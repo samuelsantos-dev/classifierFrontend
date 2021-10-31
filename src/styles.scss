@@ -2,14 +2,35 @@
 @import "assets/scss/colors.scss";
 @import "assets/scss/forms.scss";
 @import "assets/scss/sizes.scss";
+@import "assets/scss/buttons.scss";
+@import "assets/scss/positions.scss";
+@import "assets/scss/fonts.scss";
 
 *{
     font-size: 14px;
     padding: 0;
     margin: 0;
     outline: unset;
+    font-family: 'roboto-regular';
+    background-color: $light-color;
+    color: $dark-color;
+}
+
+.content {
+    position: relative;
+    left: 16.5%;
+    width: 83.5%;
+    min-width: 83.5%;
+    max-width: 83.5%;
+    height: 100vh;
+    overflow: auto;
 }
 
 .row{
     margin: 0;
+}
+
+.title{
+    font-family: 'roboto-light';
+    font-size: 30px;
 }

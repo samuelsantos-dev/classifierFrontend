@@ -1,0 +1,34 @@
+@import "./colors.scss";
+
+.btn{
+    border-radius: 7px;
+    border: none;
+    height: 40px;
+    padding: 0 15px;
+    width: fit-content;
+    min-width: 100px;
+    -moz-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+    cursor: pointer;
+    color: $light-color;
+}
+
+.btn-primary{
+    background-color: $primary-color;
+
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+.loading{
+    border: none !important;
+    background-color: $light-color !important;
+     background-image: url('../img/img-loading.gif');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content-visibility: hidden;
+}
