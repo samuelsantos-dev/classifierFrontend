@@ -18,8 +18,8 @@ export class ErrorInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         if (!window.navigator.onLine) {
-            this.createAlert('Connection lost!', 'Connection lost.');
-            return throwError(new HttpErrorResponse({ error: 'Connection lost.' }));
+            this.createAlert('Sem conexão', 'Você não possui conexão com a internet. Tente mais tarde');
+            return throwError(new HttpErrorResponse({ error: 'Sem Conexão' }));
         }
 
         return next.handle(req).pipe(catchError(error => {
@@ -33,8 +33,6 @@ export class ErrorInterceptor implements HttpInterceptor {
             }
 
             switch (errorObj.status) {
-                case 403:
-                    break;
                 case 422:
                     this.handle422(errorObj);
                     break;
@@ -47,12 +45,11 @@ export class ErrorInterceptor implements HttpInterceptor {
         }) as any);
     }
 
-
-    handle422(errorObj: { errors: { message: any; }[]; }) {
+    handle422(errorObj: any) {
         let errorsMessage = '';
         errorObj.errors.map((fieldMessage: { message: any; }) => errorsMessage += `<div style="margin-bottom: 5px;">- ${fieldMessage.message}</div>`);
 
-        this.toastr.error(errorsMessage, 'err', {
+        this.toastr.error(errorsMessage, 'Erro', {
             timeOut: 10000,
             enableHtml: true
         });
@@ -61,7 +58,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     createAlert(title: string, message: string) {
         this.toastr.error(`${title}, ${message}`);
     }
-
 }
 
 export const ErrorInterceptorProvider = {

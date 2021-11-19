@@ -23,9 +23,13 @@
     }
 }
 
+.btn-file{
+    padding: 10px 10px 0px 10px;
+}
+
 .loading{
     border: none !important;
-    background-color: $light-color !important;
+    background-color: white !important;
      background-image: url('../img/img-loading.gif');
     background-position: center;
     background-size: contain;

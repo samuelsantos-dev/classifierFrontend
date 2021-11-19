@@ -6,19 +6,18 @@
 @import "assets/scss/positions.scss";
 @import "assets/scss/fonts.scss";
 
+
 *{
     font-size: 14px;
     padding: 0;
     margin: 0;
     outline: unset;
     font-family: 'roboto-regular';
-    background-color: $light-color;
-    color: $dark-color;
 }
 
 .content {
     position: relative;
-    left: 16.5%;
+    padding-left: 100px;
     width: 83.5%;
     min-width: 83.5%;
     max-width: 83.5%;
@@ -33,4 +32,51 @@
 .title{
     font-family: 'roboto-light';
     font-size: 30px;
+}
+
+
+#toast-container {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    color: #FFF;
+    font-size: 16px;
+    margin: 10px;
+    
+    .ngx-toastr {
+        max-width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .toast-info {
+		background: #F5B24E;
+    }
+    
+    .toast-success {
+        background: #1db954;
+    }
+
+    .toast-error {
+        background: #F16066;
+    }
+}
+
+.card{
+    border-radius: 6px;
+    border: 1px solid rgba(32, 31, 31, 0.274);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 25px;
+    height: 500px;
+    width: 90%;
+    display: grid;
+
+    .card-image{
+        background-image: url('./assets/img/imagem.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 80px;
+    }
 }

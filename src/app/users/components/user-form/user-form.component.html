@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-5 bg-dark"></div>
-    <div class="col-md-7">
+    <div *ngIf="step === 0" class="col-md-7">
         <div class="content pt-6">
             <h1 class="title mb-4">Cadastre-se</h1>
             <form (ngSubmit)="submit()">
@@ -40,7 +40,8 @@
                     <div class="col-md-10 mb-3">
                         <div class="form-group">
                             <label for="confirmPassword">Confirmar senha</label>
-                            <input class="form-control" type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword">
+                            <input class="form-control" type="password" name="confirmPassword"
+                                [(ngModel)]="user.confirmPassword">
                         </div>
                     </div>
                 </div>
@@ -50,6 +51,21 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+    <div *ngIf="step === 1" class="col-md-7">
+        <div class="content align-center">
+            <div class="card card-image text-center">
+                <div class="row flex-center">
+                    <div class="title">Anexe seus documentos</div>
+                </div>
+                    <div class="card-image"></div>
+                <div class="row flex-center">
+                    <label class="btn btn-primary mt-4 btn-file "[class.loading]="loader" for="file"> Anexar arquivo (Imagem ou PDF)</label>
+                    <input (change)="getDocument($event)" class="file" type="file" id="file"
+                name="file" accept="image/x-png,image/jpeg,image/png,application/pdf"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>
