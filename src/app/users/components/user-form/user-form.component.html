@@ -55,15 +55,26 @@
     </div>
     <div *ngIf="step === 1" class="col-md-7">
         <div class="content align-center">
-            <div class="card card-image text-center">
+            <div class="card card-image text-center display-grid">
                 <div class="row flex-center">
                     <div class="title">Anexe seus documentos</div>
                 </div>
-                    <div class="card-image"></div>
+                    <div *ngIf="documents.length === 0"  class="card-image"></div>
+                    <div *ngIf="documents.length !== 0"  class="row flex-around">
+                        <div *ngFor="let document of documents" class="card file-card align-center">
+                            <div class="icon icon-cancel-filled clickable icon-medium" (click)="remove(document)"></div>
+                            <div class="icon icon-document text-center" [ngClass]="{'icon-pdf': document.extension === '.pdf',
+                            'icon-img': document.extension === '.png' || document.extension === '.jpg' ||
+                                    document.extension === '.jpeg'}">
+                                    
+                            </div>
+                            <span>{{document.name}}</span>
+                        </div>
+                    </div>
                 <div class="row flex-center">
                     <label class="btn btn-primary mt-4 btn-file "[class.loading]="loader" for="file"> Anexar arquivo (Imagem ou PDF)</label>
                     <input (change)="getDocument($event)" class="file" type="file" id="file"
-                name="file" accept="image/x-png,image/jpeg,image/png,application/pdf"/>
+                    name="file" accept="image/x-png,image/jpeg,image/png,application/pdf"/>
                 </div>
             </div>
         </div>

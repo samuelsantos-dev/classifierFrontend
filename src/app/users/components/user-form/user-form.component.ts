@@ -45,14 +45,16 @@ export class UserFormComponent {
       const name = file.name;
       const extension = name.substring(name.lastIndexOf('.'));
       const document = {name: file.name, extension: extension, size: file.size, file: file}
-      this.documents.push(document);
       this.loader = true;
       this.userService.insertDocument(this.user.id, document).subscribe(() => {
         this.toastr.success('Documento cadastrado')
+        this.documents.push(document);
         this.loader = false
-      })
+      }, () => this.loader = false)
     }
+  }
 
-    
+  remove(document: DocumentDTO){
+    this.documents.splice(this.documents.findIndex(x => x.id === document.id), 1);
   }
 }

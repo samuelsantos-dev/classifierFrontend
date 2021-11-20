@@ -3,8 +3,21 @@
     justify-content: center;
 }
 
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
 .align-center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.display-grid{
+    display: grid;
+}
+
+.text-center{
+    text-align: center;
 }
