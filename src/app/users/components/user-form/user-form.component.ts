@@ -46,9 +46,10 @@ export class UserFormComponent {
       const extension = name.substring(name.lastIndexOf('.'));
       const document = {name: file.name, extension: extension, size: file.size, file: file}
       this.loader = true;
-      this.userService.insertDocument(this.user.id, document).subscribe(() => {
+      this.userService.insertDocument(1, document).subscribe(resp => {
         this.toastr.success('Documento cadastrado')
-        this.documents.push(document);
+        console.log(resp)
+        this.documents.push(resp);
         this.loader = false
       }, () => this.loader = false)
     }

@@ -4,4 +4,5 @@ export interface DocumentDTO{
 	extension: string;
     size: any;
     file: any;
+    type?: string;
 }

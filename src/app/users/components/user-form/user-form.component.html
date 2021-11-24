@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-5 bg-dark"></div>
-    <div *ngIf="step === 0" class="col-md-7">
+    <div *ngIf="false" class="col-md-7">
         <div class="content pt-6">
             <h1 class="title mb-4">Cadastre-se</h1>
             <form (ngSubmit)="submit()">
@@ -53,7 +53,7 @@
             </form>
         </div>
     </div>
-    <div *ngIf="step === 1" class="col-md-7">
+    <div *ngIf="true" class="col-md-7">
         <div class="content align-center">
             <div class="card card-image text-center display-grid">
                 <div class="row flex-center">
@@ -69,6 +69,7 @@
                                     
                             </div>
                             <span>{{document.name}}</span>
+                            <p>{{document.type}}</p>
                         </div>
                     </div>
                 <div class="row flex-center">

@@ -23,7 +23,7 @@ export class UserService {
 
   insertDocument(id: number, document: DocumentDTO){
     const formData = Utils.toFormData(document);
-    return this.http.post<UserNewDTO>(`${environment.api}/documents/${id}`, formData,
+    return this.http.post<DocumentDTO>(`${environment.api}/documents/${id}`, formData,
     {
       observe: 'body',
       responseType: 'json'
