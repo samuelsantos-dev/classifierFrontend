@@ -30,7 +30,6 @@ export class UserFormComponent {
     this.userService.insert(this.user).subscribe(resp => {
       this.step++;
       this.user = resp;
-      this.toastr.success('Usuário cadastrado')
       this.loader = false;
     }, ()=> {
       this.loader = false;
@@ -47,8 +46,9 @@ export class UserFormComponent {
       const extension = name.substring(name.lastIndexOf('.'));
       const document = {name: file.name, extension: extension, size: file.size, file: file}
       this.loader = true;
-      this.userService.insertDocument(this.user.id, document).subscribe(resp => {
+      this.userService.insertDocument(1, document).subscribe(resp => {
         this.toastr.success('Documento cadastrado')
+        console.log(resp)
         this.documents.push(resp);
         this.loader = false
       }, () => this.loader = false)
